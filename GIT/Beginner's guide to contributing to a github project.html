@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <title>The beginner&#8217;s guide to contributing to a GitHub project &#8211; Rob Allen&#039;s DevNotes</title>
+<meta name='robots' content='max-image-preview:large' />
+<link rel="alternate" type="application/rss+xml" title="Rob Allen&#039;s DevNotes &raquo; Feed" href="https://akrabat.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Rob Allen&#039;s DevNotes &raquo; Comments Feed" href="https://akrabat.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Rob Allen&#039;s DevNotes &raquo; The beginner&#039;s guide to contributing to a GitHub project Comments Feed" href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/feed/" />
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/akrabat.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.1"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css' href='https://akrabat.com/wp-includes/css/dist/block-library/style.min.css?ver=6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='https://akrabat.com/wp-includes/css/classic-themes.min.css?ver=1' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='dashicons-css' href='https://akrabat.com/wp-includes/css/dashicons.min.css?ver=6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='achored-header-css' href='https://akrabat.com/wp-content/plugins/wp-anchor-header/css/achored-header.css?ver=0.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='indieweb-css' href='https://akrabat.com/wp-content/plugins/indieweb/static/css/indieweb-bw.css?ver=3.4.7' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css' href='https://akrabat.com/wp-content/themes/akrabat3/vendor/css/bootstrap.min.css?ver=3.37' type='text/css' media='all' />
+<link rel='stylesheet' id='akrabat3-style-css' href='https://akrabat.com/wp-content/themes/akrabat3/style.css?ver=6.1' type='text/css' media='all' />
+<script type='text/javascript' src='https://akrabat.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.1' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://akrabat.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<link rel="https://api.w.org/" href="https://akrabat.com/wp-json/" /><link rel="alternate" type="application/json" href="https://akrabat.com/wp-json/wp/v2/posts/3901" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://akrabat.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://akrabat.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.1" />
+<link rel="canonical" href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/" />
+<link rel='shortlink' href='https://akrabat.com/3901' />
+<link rel="alternate" type="application/json+oembed" href="https://akrabat.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fakrabat.com%2Fthe-beginners-guide-to-contributing-to-a-github-project%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://akrabat.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fakrabat.com%2Fthe-beginners-guide-to-contributing-to-a-github-project%2F&#038;format=xml" />
+	<link rel="stylesheet" href="https://akrabat.com/wp-content/plugins/shutter-reloaded-plus/shutter-reloaded.css" type="text/css" media="screen" />
+	    <link href="https://fonts.googleapis.com/css?family=Lato:300|PT+Serif:400,400i,700,700i" rel="stylesheet">
+	<link href="https://micro.blog/akrabat" rel="me">
+	<link rel="me" href="https://phpc.social/@akrabat">
+</head>
+
+<body class="post-template-default single single-post postid-3901 single-format-standard">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-365662-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<div class="blog-masthead">
+    <div class="container-fluid">
+        <div class="blog-header">
+            <div class="h1 blog-title"><a href="/">Rob Allen&#039;s DevNotes</a></div>
+                                    <p class="lead blog-description">Developing software in the Real World</p>
+                    </div>
+        <ul id="menu-menu-1" class="blog-nav list-inline"><li id="menu-item-2989" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2989"><a href="/">Home</a></li>
+<li id="menu-item-5075" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5075"><a href="/talks">Talks</a></li>
+<li id="menu-item-4324" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4324"><a href="https://akrabat.com/category/slim-framework/">Slim</a></li>
+<li id="menu-item-6471" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6471"><a href="https://akrabat.com/archives/">Archives</a></li>
+<li id="menu-item-6058" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6058"><a href="https://akrabat.com/category/rst2pdf/">rst2pdf</a></li>
+<li id="menu-item-2992" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2992"><a href="https://akrabat.com/archives/">Archives</a></li>
+<li id="menu-item-2990" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2990"><a href="https://akrabat.com/about/">About</a></li>
+</ul>    </div>
+</div>
+
+<div class="container-fluid">
+
+
+    <div class="row">
+
+        <div class="col-sm-9 blog-main">
+
+                                                                <article id="post-3901" class="blog-post h-entry post-3901 post type-post status-publish format-standard hentry category-php">
+            <h1 class="post-title page-header p-name">The beginner's guide to contributing to a GitHub project</h1>
+                <div class="e-content">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><p>This is a guide to contributing to an open source project that uses GitHub. It&rsquo;s mostly based on how I&rsquo;ve seen <a href="http://framework.zend.com">Zend Framework</a>, <a href="http://www.slimframework.com">Slim Framework</a> and <a href="https://joind.in">joind.in</a> operate. However, this is a general guide so check your project&rsquo;s README  for specifics.</p>
+<h2 id="tldr">TL;DR<a class="anchorlink dashicons-before" href="#tldr"></a></h2>
+<p>Skip to the <a href="#summary">summary</a>.</p>
+<h2 id="step-1-set-up-a-working-copy-on-your-computer">Step 1: Set up a working copy on your computer<a class="anchorlink dashicons-before" href="#step-1-set-up-a-working-copy-on-your-computer"></a></h2>
+<p>Firstly you need a local fork of the the project, so go ahead and press the &ldquo;fork&rdquo; button in GitHub. This will create a copy of the repository in your own GitHub account and you&rsquo;ll see a note that it&rsquo;s been forked underneath the project name:</p>
+<p><img decoding="async" src="https://akrabat.com/wp-content/uploads/2015/09/2015-09forked.png" alt="Forked" border="0" width="276" height="50"></p>
+<p>Now you need a copy locally, so find the &ldquo;SSH clone URL&rdquo; in the right hand column and use that to clone locally using a terminal:</p>
+<pre>$ git clone git@github.com:akrabat/zend-validator.git</pre>
+<p>Which will do something like this:</p>
+<p><img decoding="async" loading="lazy" src="https://akrabat.com/wp-content/uploads/2015/09/2015-09clone.png" alt="Clone" border="0" width="774" height="324"></p>
+<p>Change into the new project&rsquo;s directory:</p>
+<pre>$ cd zend-validator</pre>
+<p>Finally, in this stage, you need to set up a new remote that points to the original project so that you can grab any changes and bring them into your local copy. Firstly clock on the link to the original repository &ndash; it&rsquo;s labeled &ldquo;Forked from&rdquo; at the top of the GitHub page. This takes you back to the projects main GitHub page, so you can find the &ldquo;SSH clone URL&rdquo; and use it to create the new remote, which we&rsquo;ll call <em>upstream</em>.</p>
+<pre>$ git remote add upstream git@github.com:zendframework/zend-validator.git</pre>
+<p>You now have two remotes for this project on disk: </p>
+<ol>
+<li><em>origin</em> which points to your GitHub fork of the project. You can read and write to this remote.</li>
+<li><em>upstream</em> which points to the main project&rsquo;s GitHub repository. You can only read from this remote.</li>
+</ol>
+<h2 id="step-2-get-it-working-on-your-machine">Step 2: Get it working on your machine<a class="anchorlink dashicons-before" href="#step-2-get-it-working-on-your-machine"></a></h2>
+<p>Now that you have the source code, get it working on your computer. Hopefully there will be documentation how to do this in the <tt>README</tt> or <tt>INSTALL</tt> file. </p>
+<p>If you get it working, but the documentation is unclear, then improving that bit should be your first PR to the project. This happens to me a lot and I&rsquo;ve updated getting-started docs a lot as my first PR to a project!</p>
+<h2 id="step-3-do-some-work">Step 3: Do some work<a class="anchorlink dashicons-before" href="#step-3-do-some-work"></a></h2>
+<p>This is the fun bit where you get to contribute to the project. It&rsquo;s usually best to start by fixing a bug that is either annoying you or you&rsquo;ve found on the project&rsquo;s issue tracker. If you&rsquo;re looking for a place to start, a lot of projects use the <a href="http://seld.be/notes/encouraging-contributions-with-the-easy-pick-label">&ldquo;easy pick&rdquo; label</a> (or some variation) to indicate that this issue can be addressed by someone new to the project.</p>
+<p>Now that you have picks an issue, reproduce it on your version. Once you have reproduced it, read the code to work out where the problem is. Once you&rsquo;ve found the code problem, you can move on to fixing it.</p>
+<h3 id="branch">Branch!<a class="anchorlink dashicons-before" href="#branch"></a></h3>
+<p><strong>The number one rule is to put each piece of work on its own branch</strong>. If the project is using <a href="http://nvie.com/posts/a-successful-git-branching-model/">git-flow</a>, then it will have both a <em>master</em> and a <em>develop</em> branch. The general rule is that if you are bug fixing, then branch from master and if you are adding a new feature then branch from develop. If the project only has a <em>master</em> branch, the branch from that. Some projects, like Slim use branches named after the version number (<em>2.x</em> and <em>3.x</em> in Slim&rsquo;s case). In this case, pick the branch that&rsquo;s relevant.</p>
+<p>For this example, we&rsquo;ll assume we&rsquo;re fixing a bug in zend-validator, so we branch from <em>master</em>:</p>
+<pre>
+$ git checkout master
+$ git pull upstream master &amp;&amp; git push origin master
+$ git checkout -b hotfix/readme-update
+</pre>
+<p>Firstly we ensure we&rsquo;re on the master branch. Then the <tt>git pull</tt> command will sync our local copy with the upstream project and the <tt>git push</tt> syncs it to our forked GitHub project. Finally we create our new branch. You can name your branch whatever you like, but it helps for it to be meaningful. Including the issue number is usually helpful. If the project uses git-flow as zend-validator does, then there are specific naming conventions where the branch is prefixed with &ldquo;hotfix/&rdquo; or &ldquo;feature/&rdquo;.</p>
+<p>Now you can do the work to fix the issue. </p>
+<p>If the project has tests, run them to ensure you haven&rsquo;t broken anything. You may also add a new test to show that your change fixes the original problem.</p>
+<p><strong>Ensure that you only fix the thing you&rsquo;re working on. Do not be tempted to fix some other things that you see along the way, including formatting issues, as your PR will probably be rejected.</strong></p>
+<p>Make sure that you commit in logical blocks. Each commit message should be sane. Read Tim Pope&rsquo;s <a href="http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html">A Note About Git Commit Messages</a>. </p>
+<h2 id="step-4-create-the-pr">Step 4: Create the PR<a class="anchorlink dashicons-before" href="#step-4-create-the-pr"></a></h2>
+<p>To create a PR you need to push your branch to the <em>origin</em> remote and then press some buttons on GitHub.</p>
+<p>To push a new branch:</p>
+<pre>$ git push -u origin hotfix/readme-update</pre>
+<p>This will create the branch on your GitHub project. The -u flag links this branch with the remote one, so that in the future, you can simply type <tt>git push origin</tt>.</p>
+<p>Swap back to the browser and navigate to your fork of the project (https://github.com/akrabat/zend-validator in my case) and you&rsquo;ll see that your new branch is listed at the top with a handy &ldquo;Compare &amp; pull request&rdquo; button:</p>
+<p><img decoding="async" loading="lazy" src="https://akrabat.com/wp-content/uploads/2015/09/2015-09pr-button.png" alt="Pr button" border="0" width="805" height="72"></p>
+<p>Go ahead and press the button!</p>
+<p>If you see a yellow box like this:</p>
+<p><img decoding="async" loading="lazy" src="https://akrabat.com/wp-content/uploads/2015/09/2015-09contributing.png" alt="Contributing" border="0" width="926" height="62"></p>
+<p>Click the link which will take you to the project&rsquo;s <tt>CONTRIBUTING</tt> file and read it! It contains valuable information on how to work with the project&rsquo;s code base and will help you get your contribution accepted.</p>
+<p>On this page, ensure that the &ldquo;base fork&rdquo; points to the correct repository and branch. Then ensure that you provide a good, succinct title for your pull request and explain why you have created it in the description box. Add any relevant issue numbers if you have them.</p>
+<p><img decoding="async" loading="lazy" src="https://akrabat.com/wp-content/uploads/2015/09/2015-09create-pr.png" alt="Create pr" border="0" width="1179" height="1043"></p>
+<p>If you scroll down a bit, you&rsquo;ll see a diff of your changes. <strong>Double check that it contains what you expect.</strong></p>
+<p>Once you are happy, press the &ldquo;Create pull request&rdquo; button and you&rsquo;re done.</p>
+<h2 id="step-5-review-by-the-maintainers">Step 5: Review by the maintainers<a class="anchorlink dashicons-before" href="#step-5-review-by-the-maintainers"></a></h2>
+<p>For your work to be integrated into the project, the maintainers will review your work and either request changes or merge it.</p>
+<p>Lorna Mitchell&rsquo;s article <a href="http://www.lornajane.net/posts/2015/code-reviews-before-you-even-run-the-code">Code Reviews: Before You Even Run The Code</a> covers the things that the maintainers will look for, so read it and ensure you&rsquo;ve made their lives as easy as possible.</p>
+<h2 id="to-sum-up"><a name="summary">To sum up</a><a class="anchorlink dashicons-before" href="#to-sum-up"></a></h2>
+<p>That&rsquo;s all there is to it. The fundamentals are:</p>
+<ol>
+<li>Fork the project &amp; clone locally.</li>
+<li>Create an <em>upstream</em> remote and sync your local copy before you branch.</li>
+<li>Branch for each separate piece of work.</li>
+<li>Do the work, write <a href="https://blogs.gnome.org/danni/2011/10/25/a-guide-to-writing-git-commit-messages/">good commit messages</a>, and read the CONTRIBUTING file if there is one.</li>
+<li>Push to your <em>origin</em> repository.</li>
+<li>Create a new PR in GitHub.</li>
+<li>Respond to any <a href="http://www.lornajane.net/posts/2015/code-reviews-before-you-even-run-the-code">code review</a> feedback.</li>
+</ol>
+<p>If you want to contribute to an open source project, the best one to pick is one that you are using yourself. The maintainers will appreciate it!</p>
+</body></html>
+
+</div>
+                        <p class="post-meta meta singular-post-meta">This article was posted on
+                                <time class="dt-published" datetime="2015-09-22 07:45:10" title="2015-09-22 07:45:10">22 September 2015</time>
+                                in <span class="categories-links"><a href="https://akrabat.com/category/php/" rel="category tag">PHP</a></span>
+                        </p>
+                                              </article>
+
+                
+<div id="comments" class="comments-area">
+
+            <h2 class="comments-title">
+            63 thoughts on &ldquo;<span>The beginner's guide to contributing to a GitHub project</span>&rdquo;        </h2>
+
+        <ol class="comment-list">
+            		<li id="comment-32292" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-32292" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/90da44cbe3afc1917e646c606fad3ad9?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/90da44cbe3afc1917e646c606fad3ad9?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn"><a href='http://www.jaimeolmo.com' rel='external nofollow ugc' class='url'>Jaime Olmo</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-32292"><time datetime="2015-09-24T15:05:14+01:00">24 September 2015 at 3:05 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Excellent article. I have a question, how CI / CD would fit in this process? It would be before of the Review or as an activity once the review is completed?</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=32292#respond' data-commentid="32292" data-postid="3901" data-belowelement="div-comment-32292" data-respondelement="respond" data-replyto="Reply to Jaime Olmo" aria-label='Reply to Jaime Olmo'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-38245" class="comment odd alt depth-2">
+			<article id="div-comment-38245" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/b986e01f9f0c9310866dd74518870605?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/b986e01f9f0c9310866dd74518870605?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">Vlad</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-38245"><time datetime="2016-05-20T19:28:37+01:00">20 May 2016 at 7:28 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>I don't know how this work on github. Actually, I think it is not github. It is some CI platform like travis.</p>
+<p>It can be set UP on different ways:<br />
+1) build will trigger automatically on creating pull request. Pull request can be merged only if build was success<br />
+2) build is triggered by changes on your work branch<br />
+3) any other way&#8230; </p>
+<p>So, the answer depends for each project, I think.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=38245#respond' data-commentid="38245" data-postid="3901" data-belowelement="div-comment-38245" data-respondelement="respond" data-replyto="Reply to Vlad" aria-label='Reply to Vlad'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-32346" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-32346" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/f4af081777b0490644a740883b27317a?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/f4af081777b0490644a740883b27317a?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">Felipe Martins</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-32346"><time datetime="2015-09-26T13:59:52+01:00">26 September 2015 at 1:59 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>WOWW, nice nice nice! Many thanks, Mr. Rob!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=32346#respond' data-commentid="32346" data-postid="3901" data-belowelement="div-comment-32346" data-respondelement="respond" data-replyto="Reply to Felipe Martins" aria-label='Reply to Felipe Martins'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-32409" class="pingback odd alt thread-even depth-1">
+			<div class="comment-body">
+				Pingback: <a href='http://rogeriopradoj.com/2015/09/28/o-guia-para-iniciantes-sobre-como-contribuir-com-um-projeto-no-github/' rel='external nofollow ugc' class='url'>O guia para iniciantes sobre como contribuir com um projeto no GitHub | ROGERIO PRADO J | rogeriopradoj.com</a> 			</div>
+		</li><!-- #comment-## -->
+		<li id="comment-32444" class="pingback even thread-odd thread-alt depth-1">
+			<div class="comment-body">
+				Pingback: <a href='https://blog.42mate.com/?p=139' rel='external nofollow ugc' class='url'>How do we hire ? | 42MATE Blog</a> 			</div>
+		</li><!-- #comment-## -->
+		<li id="comment-32979" class="pingback odd alt thread-even depth-1">
+			<div class="comment-body">
+				Pingback: <a href='http://imasters.com.br/desenvolvimento/como-contribuir-com-um-projeto-no-github/?trace=1519021197&#038;source' rel='external nofollow ugc' class='url'>Como contribuir com um projeto no GitHub -</a> 			</div>
+		</li><!-- #comment-## -->
+		<li id="comment-32982" class="pingback even thread-odd thread-alt depth-1">
+			<div class="comment-body">
+				Pingback: <a href='http://blog.jetbrains.com/phpstorm/2015/10/php-annotated-monthly-october-2015/' rel='external nofollow ugc' class='url'>PHP Annotated Monthly – October 2015 | JetBrains PhpStorm Blog</a> 			</div>
+		</li><!-- #comment-## -->
+		<li id="comment-37145" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-37145" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/e9d2bd0459a8a28b1688b975ec7f8ca5?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/e9d2bd0459a8a28b1688b975ec7f8ca5?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn"><a href='http://www.boxitoff.com' rel='external nofollow ugc' class='url'>Sean Behan</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-37145"><time datetime="2016-03-15T22:50:29+00:00">15 March 2016 at 10:50 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thanks for this article it was very clear and easy to follow.<br />
+I've just my first Pull Request and I'm now dealing with the a Code Review.<br />
+Just a note for anyone else &#8211; Updating your pull request is as simple as making the changes and committing them, the Pull Request is automatically updated.<br />
+Thanks again</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=37145#respond' data-commentid="37145" data-postid="3901" data-belowelement="div-comment-37145" data-respondelement="respond" data-replyto="Reply to Sean Behan" aria-label='Reply to Sean Behan'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-37413" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-37413" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/558732d05ebaa9515f495275bf7969a2?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/558732d05ebaa9515f495275bf7969a2?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn"><a href='http://noureddine.me/' rel='external nofollow ugc' class='url'>Noureddine LOUAHEDJ</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-37413"><time datetime="2016-03-31T23:20:36+01:00">31 March 2016 at 11:20 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thanks for your article, it is very clear and simple.<br />
+Best regards</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=37413#respond' data-commentid="37413" data-postid="3901" data-belowelement="div-comment-37413" data-respondelement="respond" data-replyto="Reply to Noureddine LOUAHEDJ" aria-label='Reply to Noureddine LOUAHEDJ'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-37731" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-37731" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/370dd6935947974f3d300c1e42785361?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/370dd6935947974f3d300c1e42785361?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">Sirolad</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-37731"><time datetime="2016-04-24T09:13:58+01:00">24 April 2016 at 9:13 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>This is an eye-opener</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=37731#respond' data-commentid="37731" data-postid="3901" data-belowelement="div-comment-37731" data-respondelement="respond" data-replyto="Reply to Sirolad" aria-label='Reply to Sirolad'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-37993" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-37993" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/ddd70ce0c73f39da84183ee78658cee5?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/ddd70ce0c73f39da84183ee78658cee5?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn"><a href='http://ukorjidechi.com' rel='external nofollow ugc' class='url'>Ukor Jidechi E.</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-37993"><time datetime="2016-05-11T21:16:13+01:00">11 May 2016 at 9:16 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thank you very much, the article was very helpful and well explained.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=37993#respond' data-commentid="37993" data-postid="3901" data-belowelement="div-comment-37993" data-respondelement="respond" data-replyto="Reply to Ukor Jidechi E." aria-label='Reply to Ukor Jidechi E.'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-38317" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-38317" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/ccd9be37f5bd322e9d3968f767328928?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/ccd9be37f5bd322e9d3968f767328928?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">Sebastjan</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-38317"><time datetime="2016-05-24T06:54:36+01:00">24 May 2016 at 6:54 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Just what I was looking for, thank you!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=38317#respond' data-commentid="38317" data-postid="3901" data-belowelement="div-comment-38317" data-respondelement="respond" data-replyto="Reply to Sebastjan" aria-label='Reply to Sebastjan'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-38701" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-38701" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/d3822491bb97552aae346a220a2502ab?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/d3822491bb97552aae346a220a2502ab?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn"><a href='http://vigneshrajkumar.com' rel='external nofollow ugc' class='url'>Vignesh</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-38701"><time datetime="2016-06-19T04:26:16+01:00">19 June 2016 at 4:26 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Very explanatory! Thanks!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=38701#respond' data-commentid="38701" data-postid="3901" data-belowelement="div-comment-38701" data-respondelement="respond" data-replyto="Reply to Vignesh" aria-label='Reply to Vignesh'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-45872" class="comment odd alt depth-2">
+			<article id="div-comment-45872" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/92cc4ed4c8db3a1a5eff8e84ad3865c2?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/92cc4ed4c8db3a1a5eff8e84ad3865c2?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">clever</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-45872"><time datetime="2017-05-14T18:57:02+01:00">14 May 2017 at 6:57 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>really enlightening article on git&#8230;thanks a million</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=45872#respond' data-commentid="45872" data-postid="3901" data-belowelement="div-comment-45872" data-respondelement="respond" data-replyto="Reply to clever" aria-label='Reply to clever'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-38717" class="comment even thread-even depth-1">
+			<article id="div-comment-38717" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/1e018904f1e04938f577d456ccc0ddc5?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/1e018904f1e04938f577d456ccc0ddc5?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">Usman Haider Raja</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-38717"><time datetime="2016-06-19T20:52:15+01:00">19 June 2016 at 8:52 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Great tutorial to get you started on contributing to open source. Recommend it !</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=38717#respond' data-commentid="38717" data-postid="3901" data-belowelement="div-comment-38717" data-respondelement="respond" data-replyto="Reply to Usman Haider Raja" aria-label='Reply to Usman Haider Raja'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-39415" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-39415" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/9a99217ae08996a8587f2d154fef16ed?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/9a99217ae08996a8587f2d154fef16ed?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">Rowland</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-39415"><time datetime="2016-08-04T13:30:30+01:00">4 August 2016 at 1:30 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thanks Rob. If I'm submitting a PR for test coverage and badge, how do I add the author's credentials to, say coveralls to be able to generate the coverage and badge.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=39415#respond' data-commentid="39415" data-postid="3901" data-belowelement="div-comment-39415" data-respondelement="respond" data-replyto="Reply to Rowland" aria-label='Reply to Rowland'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-39439" class="comment even thread-even depth-1">
+			<article id="div-comment-39439" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/fcd8866a528ca9944313d610bff1597f?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/fcd8866a528ca9944313d610bff1597f?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">Hadi</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-39439"><time datetime="2016-08-09T18:56:44+01:00">9 August 2016 at 6:56 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>very well written, thank you</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=39439#respond' data-commentid="39439" data-postid="3901" data-belowelement="div-comment-39439" data-respondelement="respond" data-replyto="Reply to Hadi" aria-label='Reply to Hadi'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-40139" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-40139" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/3fd8083dfd6782ee92b6b4410892191e?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/3fd8083dfd6782ee92b6b4410892191e?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn"><a href='http://shibasisp.github.io' rel='external nofollow ugc' class='url'>Shibasis Patel</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-40139"><time datetime="2016-09-27T19:14:22+01:00">27 September 2016 at 7:14 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Amazing Article :)</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=40139#respond' data-commentid="40139" data-postid="3901" data-belowelement="div-comment-40139" data-respondelement="respond" data-replyto="Reply to Shibasis Patel" aria-label='Reply to Shibasis Patel'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-41268" class="comment even thread-even depth-1">
+			<article id="div-comment-41268" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/3912c4beca80e2d9ae973af181556704?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/3912c4beca80e2d9ae973af181556704?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn"><a href='http://yargies.com' rel='external nofollow ugc' class='url'>Kenji</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-41268"><time datetime="2016-11-10T20:36:49+00:00">10 November 2016 at 8:36 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thanks. This article was useful today :)</p>
+<p>Clear and simple.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=41268#respond' data-commentid="41268" data-postid="3901" data-belowelement="div-comment-41268" data-respondelement="respond" data-replyto="Reply to Kenji" aria-label='Reply to Kenji'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-42265" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-42265" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/a59acc7ddc8de336ced5917aa513226d?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a59acc7ddc8de336ced5917aa513226d?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn"><a href='http://appsparkler.com' rel='external nofollow ugc' class='url'>Akash</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-42265"><time datetime="2016-12-17T02:54:14+00:00">17 December 2016 at 2:54 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Very helpful.</p>
+<p>Thank you very much.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=42265#respond' data-commentid="42265" data-postid="3901" data-belowelement="div-comment-42265" data-respondelement="respond" data-replyto="Reply to Akash" aria-label='Reply to Akash'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-42655" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-42655" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/c0bdca1e565ce555f5c735b75d349658?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/c0bdca1e565ce555f5c735b75d349658?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">Roshan Jossey</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-42655"><time datetime="2016-12-30T13:35:38+00:00">30 December 2016 at 1:35 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>I've started on a project to help beginners get started with contributing to open source.<br />
+<a href="https://github.com/Roshanjossey/first-contributions" rel="nofollow ugc">https://github.com/Roshanjossey/first-contributions</a></p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=42655#respond' data-commentid="42655" data-postid="3901" data-belowelement="div-comment-42655" data-respondelement="respond" data-replyto="Reply to Roshan Jossey" aria-label='Reply to Roshan Jossey'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-74566" class="comment odd alt depth-2">
+			<article id="div-comment-74566" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/d7b88d557cfbc9ea8b091267316864f2?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/d7b88d557cfbc9ea8b091267316864f2?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">gimjay23</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-74566"><time datetime="2019-08-29T01:45:33+01:00">29 August 2019 at 1:45 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>You don't know how much you helped me with my first contribution to my team's project. Very grateful.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=74566#respond' data-commentid="74566" data-postid="3901" data-belowelement="div-comment-74566" data-respondelement="respond" data-replyto="Reply to gimjay23" aria-label='Reply to gimjay23'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-45415" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-45415" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/f0b3007696788bc4beae4a0002afb0e9?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/f0b3007696788bc4beae4a0002afb0e9?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">James D</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-45415"><time datetime="2017-04-17T17:04:40+01:00">17 April 2017 at 5:04 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Perfect guide &#8211; thanks for sharing!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=45415#respond' data-commentid="45415" data-postid="3901" data-belowelement="div-comment-45415" data-respondelement="respond" data-replyto="Reply to James D" aria-label='Reply to James D'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-45749" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-45749" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/eb6f66e770bdd544f801605262fc775d?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/eb6f66e770bdd544f801605262fc775d?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">ali</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-45749"><time datetime="2017-05-03T16:39:48+01:00">3 May 2017 at 4:39 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Nice post. Thanks</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=45749#respond' data-commentid="45749" data-postid="3901" data-belowelement="div-comment-45749" data-respondelement="respond" data-replyto="Reply to ali" aria-label='Reply to ali'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-45786" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-45786" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/0a47da997987f8d66a76e971bb182d31?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/0a47da997987f8d66a76e971bb182d31?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">hd84355</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-45786"><time datetime="2017-05-06T21:56:25+01:00">6 May 2017 at 9:56 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Excellenet article, thanks!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=45786#respond' data-commentid="45786" data-postid="3901" data-belowelement="div-comment-45786" data-respondelement="respond" data-replyto="Reply to hd84355" aria-label='Reply to hd84355'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-45983" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-45983" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/1715836815a837ceae616526e9fa21ca?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/1715836815a837ceae616526e9fa21ca?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">Arjun Sisodia</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-45983"><time datetime="2017-05-22T05:43:00+01:00">22 May 2017 at 5:43 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>nice article</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=45983#respond' data-commentid="45983" data-postid="3901" data-belowelement="div-comment-45983" data-respondelement="respond" data-replyto="Reply to Arjun Sisodia" aria-label='Reply to Arjun Sisodia'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-46090" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-46090" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/dd023e7ee7295569a2781056fe0f50f3?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/dd023e7ee7295569a2781056fe0f50f3?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">Papoj Thamjaroenporn</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-46090"><time datetime="2017-05-30T15:58:28+01:00">30 May 2017 at 3:58 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>This is awesome. I just realized now how easy it is to contribute to existing repository projects online. Thanks!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=46090#respond' data-commentid="46090" data-postid="3901" data-belowelement="div-comment-46090" data-respondelement="respond" data-replyto="Reply to Papoj Thamjaroenporn" aria-label='Reply to Papoj Thamjaroenporn'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-58015" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-58015" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/b1cbec067e81a2d6fc6ed3573b4b4e31?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/b1cbec067e81a2d6fc6ed3573b4b4e31?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn"><a href='http://www.begueradj.com' rel='external nofollow ugc' class='url'>begueradj</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-58015"><time datetime="2018-12-09T10:05:52+00:00">9 December 2018 at 10:05 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Good tutorial.</p>
+<p>You wrote: "Swap back to the browser and navigate to your fork of the project". That is true, we also can see the same thing if we navigate to the original repository.</p>
+<p>Thank you<br />
+BEGUERADJ Billal</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=58015#respond' data-commentid="58015" data-postid="3901" data-belowelement="div-comment-58015" data-respondelement="respond" data-replyto="Reply to begueradj" aria-label='Reply to begueradj'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-58250" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-58250" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/d171dcc9ef914a65dd51ad956477b9b3?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/d171dcc9ef914a65dd51ad956477b9b3?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">dajiang zhong</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-58250"><time datetime="2018-12-25T10:45:52+00:00">25 December 2018 at 10:45 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Nice post. If the upstream ssh address doesn't work then could use http address.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=58250#respond' data-commentid="58250" data-postid="3901" data-belowelement="div-comment-58250" data-respondelement="respond" data-replyto="Reply to dajiang zhong" aria-label='Reply to dajiang zhong'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-62002" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-62002" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/832e7fd1713de344d00ba3cc9c6fae54?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/832e7fd1713de344d00ba3cc9c6fae54?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">Ken Ingram</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-62002"><time datetime="2019-02-09T23:57:27+00:00">9 February 2019 at 11:57 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thanks this was mostly simple and succinct.<br />
+Ultimately valuable.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=62002#respond' data-commentid="62002" data-postid="3901" data-belowelement="div-comment-62002" data-respondelement="respond" data-replyto="Reply to Ken Ingram" aria-label='Reply to Ken Ingram'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-64469" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-64469" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/7fff25708bcc419b049ea33da117495a?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/7fff25708bcc419b049ea33da117495a?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">Fabrizio</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-64469"><time datetime="2019-02-23T20:19:04+00:00">23 February 2019 at 8:19 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thank you for such an awesome and simple tutorial.</p>
+<p>Best regards.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=64469#respond' data-commentid="64469" data-postid="3901" data-belowelement="div-comment-64469" data-respondelement="respond" data-replyto="Reply to Fabrizio" aria-label='Reply to Fabrizio'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-68551" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-68551" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/d768ce9fd929b30abda884fca89bb178?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/d768ce9fd929b30abda884fca89bb178?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">Sulenchy</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-68551"><time datetime="2019-03-22T18:47:59+00:00">22 March 2019 at 6:47 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Nice one</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=68551#respond' data-commentid="68551" data-postid="3901" data-belowelement="div-comment-68551" data-respondelement="respond" data-replyto="Reply to Sulenchy" aria-label='Reply to Sulenchy'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-68780" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-68780" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/9113991e4c059d9bb553ecdef20327e3?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/9113991e4c059d9bb553ecdef20327e3?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn"><a href='http://roxcode.com' rel='external nofollow ugc' class='url'>Rosario Gueli</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-68780"><time datetime="2019-03-24T05:14:40+00:00">24 March 2019 at 5:14 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Great stuff, this was very instructional and useful. Thanks!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=68780#respond' data-commentid="68780" data-postid="3901" data-belowelement="div-comment-68780" data-respondelement="respond" data-replyto="Reply to Rosario Gueli" aria-label='Reply to Rosario Gueli'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-72023" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-72023" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/e00d0fa6721c645406d724ace8715770?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/e00d0fa6721c645406d724ace8715770?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">Pankaj</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-72023"><time datetime="2019-04-13T10:42:51+01:00">13 April 2019 at 10:42 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hey Buddy, Thank You for this wonderful write up on git.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=72023#respond' data-commentid="72023" data-postid="3901" data-belowelement="div-comment-72023" data-respondelement="respond" data-replyto="Reply to Pankaj" aria-label='Reply to Pankaj'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-72820" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-72820" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/3c97dfa4a939fd5c0b90af2d1a2cd2ff?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/3c97dfa4a939fd5c0b90af2d1a2cd2ff?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn"><a href='https://peterwitham.com' rel='external nofollow ugc' class='url'>Peter Witham</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-72820"><time datetime="2019-04-24T08:58:50+01:00">24 April 2019 at 8:58 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Great write up with easy to follow instructions, thanks.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=72820#respond' data-commentid="72820" data-postid="3901" data-belowelement="div-comment-72820" data-respondelement="respond" data-replyto="Reply to Peter Witham" aria-label='Reply to Peter Witham'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-73080" class="comment odd alt thread-even depth-1 parent">
+			<article id="div-comment-73080" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/f40986fe867438d7c96e08dc6b38a791?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/f40986fe867438d7c96e08dc6b38a791?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">Alex</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-73080"><time datetime="2019-05-10T20:12:15+01:00">10 May 2019 at 8:12 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hello,<br />
+I am sorry, I feel stupid reading that it was clear for everybody here. Being a real dummy probably, I was not able to follow. When do you commit? After this, right ?<br />
+$ git checkout master<br />
+$ git pull upstream master &amp;&amp; git push origin master<br />
+$ git checkout -b hotfix/readme-update</p>
+<p>So why do you push?</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=73080#respond' data-commentid="73080" data-postid="3901" data-belowelement="div-comment-73080" data-respondelement="respond" data-replyto="Reply to Alex" aria-label='Reply to Alex'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-73147" class="comment byuser comment-author-roballen bypostauthor even depth-2">
+			<article id="div-comment-73147" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/79d9ba388d6b6cf4ec7310cad9fa8c8a?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/79d9ba388d6b6cf4ec7310cad9fa8c8a?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn"><a href='http://akrabat.com' rel='external nofollow ugc' class='url'>Rob</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-73147"><time datetime="2019-05-15T08:28:01+01:00">15 May 2019 at 8:28 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Alex,</p>
+<p>After you have created the new branch with <tt>git checkout -b hotfix/readme-update</tt>, you then make changes and commit them.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=73147#respond' data-commentid="73147" data-postid="3901" data-belowelement="div-comment-73147" data-respondelement="respond" data-replyto="Reply to Rob" aria-label='Reply to Rob'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-73198" class="comment odd alt depth-2">
+			<article id="div-comment-73198" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/5579b4e856a0d1d23766da771e3c5deb?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/5579b4e856a0d1d23766da771e3c5deb?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">Ales_blaze</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-73198"><time datetime="2019-05-20T07:28:39+01:00">20 May 2019 at 7:28 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>he first pulled the changes from original project and then pushed the changes to the forked version of the project.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=73198#respond' data-commentid="73198" data-postid="3901" data-belowelement="div-comment-73198" data-respondelement="respond" data-replyto="Reply to Ales_blaze" aria-label='Reply to Ales_blaze'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-73197" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-73197" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/5579b4e856a0d1d23766da771e3c5deb?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/5579b4e856a0d1d23766da771e3c5deb?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">Ales_blaze</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-73197"><time datetime="2019-05-20T07:27:06+01:00">20 May 2019 at 7:27 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thankyou so much for the guide , i was not being able to contribute on github repos , but after this guide i made my commit and successfully contributed to the open source project.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=73197#respond' data-commentid="73197" data-postid="3901" data-belowelement="div-comment-73197" data-respondelement="respond" data-replyto="Reply to Ales_blaze" aria-label='Reply to Ales_blaze'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-73217" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-73217" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/390037799bc6e7ecfae52904c2c5ed33?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/390037799bc6e7ecfae52904c2c5ed33?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">Himanshi</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-73217"><time datetime="2019-05-21T11:37:35+01:00">21 May 2019 at 11:37 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Please make sure you have the correct access rights<br />
+and the repository exists.<br />
+When I cloned the repository this message came up</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=73217#respond' data-commentid="73217" data-postid="3901" data-belowelement="div-comment-73217" data-respondelement="respond" data-replyto="Reply to Himanshi" aria-label='Reply to Himanshi'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-73219" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-73219" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/3a045a2d525bc1045756017dbf8b92ff?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/3a045a2d525bc1045756017dbf8b92ff?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn"><a href='http://paulayo.github.io' rel='external nofollow ugc' class='url'>paul</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-73219"><time datetime="2019-05-21T13:08:50+01:00">21 May 2019 at 1:08 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>I grateful for the article, you made me understand the workflow properly. Thank a lot</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=73219#respond' data-commentid="73219" data-postid="3901" data-belowelement="div-comment-73219" data-respondelement="respond" data-replyto="Reply to paul" aria-label='Reply to paul'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-73234" class="comment odd alt thread-even depth-1 parent">
+			<article id="div-comment-73234" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/72f0c85e12b7bacd1aba910dfd497425?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/72f0c85e12b7bacd1aba910dfd497425?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">Carl Graff</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-73234"><time datetime="2019-05-22T19:53:21+01:00">22 May 2019 at 7:53 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>This is great but all tutorials seem tps top after the PR is cpmplete &#8211; step 7 in the summary</p>
+<p>At this point I believe you are left with both a local and origin remote brnach named "hotfix/readme-update"</p>
+<p>So now I want to make more changes do i:<br />
+1. merge the local hotfix/readme-update with the local master and push to remote origin master<br />
+2. change to local master and create a new branch named for example hotfix/readme-update-more<br />
+3. delete older local and origin branch named hotfix/readme-update<br />
+4. use new branch hotfix/readme-update-more through to PR acceptance as you descibed above.<br />
+5. repeat steps 1 &#8211; 4 above for all new development<br />
+&#8212; this first set of steps assumes we want to get rid of branches that are completed</p>
+<p>1. change to local master<br />
+2. pull from upstrem master in case some new changes have crept in<br />
+3. create new local branch for example hotfix/readme-update-more<br />
+4 . continue as you explained above only usethe new branch through to PR acceptance<br />
+5. repeat steps 1 &#8211; 4 above for all new development<br />
+&#8212; this second set of steps assume the old local and remote origin branchs are left as history</p>
+<p>I think it matters to a certain degree what order these steps are done in though it may vary silighty.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=73234#respond' data-commentid="73234" data-postid="3901" data-belowelement="div-comment-73234" data-respondelement="respond" data-replyto="Reply to Carl Graff" aria-label='Reply to Carl Graff'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-73236" class="comment byuser comment-author-roballen bypostauthor even depth-2">
+			<article id="div-comment-73236" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/79d9ba388d6b6cf4ec7310cad9fa8c8a?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/79d9ba388d6b6cf4ec7310cad9fa8c8a?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn"><a href='http://akrabat.com' rel='external nofollow ugc' class='url'>Rob</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-73236"><time datetime="2019-05-22T20:37:36+01:00">22 May 2019 at 8:37 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Carl,</p>
+<p>Good question! I should write a follow up for the next steps. Until then…</p>
+<p>You don't merge your work to master as the project maintainers will do so. Also, you never re-use a branch for new work &#8211; create a new one. </p>
+<p>Once your PR has been merged, you can delete your branch. Firstly update your master with the changes from the maintainers:</p>
+<pre>
+$ git checkout master
+$ git pull upstream master
+$ git push origin master
+</pre>
+<p>You can now delete your branch:</p>
+<pre>
+$ git branch -d hotfix/readme-update
+$ git push origin --delete hotfix/readme-update
+</pre>
+<p>You now have the latest version of the code, so for your next change you can start again at step 3 with:</p>
+<pre>
+$ git checkout master
+$ git pull upstream master &#038;& git push origin master
+$ git checkout -b hotfix/my-next-fix
+</pre>
+<p>and away you go making the changes required.</p>
+<p>Hopefully that makes sense!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=73236#respond' data-commentid="73236" data-postid="3901" data-belowelement="div-comment-73236" data-respondelement="respond" data-replyto="Reply to Rob" aria-label='Reply to Rob'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-73349" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-73349" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/07b172b707fecc3e1c4e0ee82c04f07b?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/07b172b707fecc3e1c4e0ee82c04f07b?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">Sailesh Patra</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-73349"><time datetime="2019-06-03T15:04:56+01:00">3 June 2019 at 3:04 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Very very useful.Thank you man.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=73349#respond' data-commentid="73349" data-postid="3901" data-belowelement="div-comment-73349" data-respondelement="respond" data-replyto="Reply to Sailesh Patra" aria-label='Reply to Sailesh Patra'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-74081" class="comment even thread-even depth-1">
+			<article id="div-comment-74081" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/aba60fe029260df583f65e384c1050e4?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/aba60fe029260df583f65e384c1050e4?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">Kamal Eddin</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-74081"><time datetime="2019-07-21T11:51:35+01:00">21 July 2019 at 11:51 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Greate Article, Thanks.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=74081#respond' data-commentid="74081" data-postid="3901" data-belowelement="div-comment-74081" data-respondelement="respond" data-replyto="Reply to Kamal Eddin" aria-label='Reply to Kamal Eddin'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-74108" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-74108" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/37c2e47e33238324f151c4615489d7ee?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/37c2e47e33238324f151c4615489d7ee?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">Paulius</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-74108"><time datetime="2019-07-26T06:14:05+01:00">26 July 2019 at 6:14 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>That is a cool article, thank you for sharing :)</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=74108#respond' data-commentid="74108" data-postid="3901" data-belowelement="div-comment-74108" data-respondelement="respond" data-replyto="Reply to Paulius" aria-label='Reply to Paulius'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-75643" class="comment even thread-even depth-1">
+			<article id="div-comment-75643" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/c53a9aee8bb94cb71e423eb7fd1536d9?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/c53a9aee8bb94cb71e423eb7fd1536d9?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">shahzeb</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-75643"><time datetime="2019-09-18T15:27:33+01:00">18 September 2019 at 3:27 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>A very nice step by step article. Thanks bro&#8230;</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=75643#respond' data-commentid="75643" data-postid="3901" data-belowelement="div-comment-75643" data-respondelement="respond" data-replyto="Reply to shahzeb" aria-label='Reply to shahzeb'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-76388" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-76388" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/949f7308d5e2b1acfea29bcd3e221453?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/949f7308d5e2b1acfea29bcd3e221453?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn"><a href='http://nope' rel='external nofollow ugc' class='url'>Mourph</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-76388"><time datetime="2019-10-24T19:59:52+01:00">24 October 2019 at 7:59 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>This helped. just wanted to say thanks!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=76388#respond' data-commentid="76388" data-postid="3901" data-belowelement="div-comment-76388" data-respondelement="respond" data-replyto="Reply to Mourph" aria-label='Reply to Mourph'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-76860" class="pingback even thread-even depth-1">
+			<div class="comment-body">
+				Pingback: <a href='https://www.tapchief.com/blog/land-freelance-projects-no-experience/' rel='external nofollow ugc' class='url'>How to land freelance projects with no experience - TapChief Blog</a> 			</div>
+		</li><!-- #comment-## -->
+		<li id="comment-80072" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-80072" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/c1eae6bf0f0c018997b7a605ab281cf0?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/c1eae6bf0f0c018997b7a605ab281cf0?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">Aishat</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-80072"><time datetime="2020-05-13T10:54:40+01:00">13 May 2020 at 10:54 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thank you very much for this Sir</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=80072#respond' data-commentid="80072" data-postid="3901" data-belowelement="div-comment-80072" data-respondelement="respond" data-replyto="Reply to Aishat" aria-label='Reply to Aishat'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-80529" class="comment even thread-even depth-1">
+			<article id="div-comment-80529" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/26769db5081148980d663eb427abe59b?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/26769db5081148980d663eb427abe59b?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">Sovit</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-80529"><time datetime="2020-06-10T11:54:27+01:00">10 June 2020 at 11:54 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Great post. Helped me a lot.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=80529#respond' data-commentid="80529" data-postid="3901" data-belowelement="div-comment-80529" data-respondelement="respond" data-replyto="Reply to Sovit" aria-label='Reply to Sovit'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-81864" class="pingback odd alt thread-odd thread-alt depth-1">
+			<div class="comment-body">
+				Pingback: <a href='https://www.codedotshow.com/blog/using-git-source-code-control-with-delphi-and-rad-studio-all-the-reasons-why-and-everything-you-need-to-know/' rel='external nofollow ugc' class='url'>Using Git source code control with Delphi and RAD Studio – all the reasons why and EVERYTHING you need to know</a> 			</div>
+		</li><!-- #comment-## -->
+		<li id="comment-84416" class="comment even thread-even depth-1">
+			<article id="div-comment-84416" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/18abf364a78ae3df42d1d22eb4303b3e?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/18abf364a78ae3df42d1d22eb4303b3e?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn"><a href='https://inskade.com/' rel='external nofollow ugc' class='url'>Mobile App development in Kerala</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-84416"><time datetime="2020-11-27T05:00:23+00:00">27 November 2020 at 5:00 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thank you for such an awesome and simple tutorial.</p>
+<p>Best regards.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=84416#respond' data-commentid="84416" data-postid="3901" data-belowelement="div-comment-84416" data-respondelement="respond" data-replyto="Reply to Mobile App development in Kerala" aria-label='Reply to Mobile App development in Kerala'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-85913" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-85913" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/15eec12fd5a93c9a29f5f9f72645c31d?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/15eec12fd5a93c9a29f5f9f72645c31d?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">Kashif Afzal</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-85913"><time datetime="2021-01-24T03:56:33+00:00">24 January 2021 at 3:56 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Very nice. Blessings</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=85913#respond' data-commentid="85913" data-postid="3901" data-belowelement="div-comment-85913" data-respondelement="respond" data-replyto="Reply to Kashif Afzal" aria-label='Reply to Kashif Afzal'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-86345" class="pingback even thread-even depth-1">
+			<div class="comment-body">
+				Pingback: <a href='https://mylearningsdump.wordpress.com/2021/02/05/udacity-machine-learning-course-part-1/' rel='external nofollow ugc' class='url'>Udacity Machine Learning Course &#8211; part 1 | Site Title</a> 			</div>
+		</li><!-- #comment-## -->
+		<li id="comment-86890" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-86890" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/05af1ce41a26fca19255a0d5521481fb?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/05af1ce41a26fca19255a0d5521481fb?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn"><a href='https://guiadohost.com' rel='external nofollow ugc' class='url'>Rubens</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-86890"><time datetime="2021-04-11T08:52:44+01:00">11 April 2021 at 8:52 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Very good</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=86890#respond' data-commentid="86890" data-postid="3901" data-belowelement="div-comment-86890" data-respondelement="respond" data-replyto="Reply to Rubens" aria-label='Reply to Rubens'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-88604" class="comment even thread-even depth-1">
+			<article id="div-comment-88604" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/cca41508e62305a3ccddc16d26aa5310?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/cca41508e62305a3ccddc16d26aa5310?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn"><a href='https://twitter.com/paulmasri' rel='external nofollow ugc' class='url'>Paul Masri-Stone</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-88604"><time datetime="2021-08-04T04:05:58+01:00">4 August 2021 at 4:05 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Very useful article, thanks Rob.</p>
+<p>If you, say, add a feature, in a PR and the original repo owner does not want to include it in their repo, is there a way to retain and merge this feature back into the forked repo so that I can make use of it myself?</p>
+<p>Or in the case of a repo that is no longer maintained, is there a way I can become the maintainer of the fork, adding features and fixes as I go?</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=88604#respond' data-commentid="88604" data-postid="3901" data-belowelement="div-comment-88604" data-respondelement="respond" data-replyto="Reply to Paul Masri-Stone" aria-label='Reply to Paul Masri-Stone'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-88941" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-88941" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/cd14466369beebef0d23d1840db5c51a?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/cd14466369beebef0d23d1840db5c51a?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">Bartholomew Shekari</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-88941"><time datetime="2021-08-19T15:53:07+01:00">19 August 2021 at 3:53 pm</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Great one. I'm learning from the experts. Thanks a lot</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=88941#respond' data-commentid="88941" data-postid="3901" data-belowelement="div-comment-88941" data-respondelement="respond" data-replyto="Reply to Bartholomew Shekari" aria-label='Reply to Bartholomew Shekari'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-92942" class="pingback even thread-even depth-1">
+			<div class="comment-body">
+				Pingback: <a href='https://prorabbit.ru/kak-prinjat-uchastie-v-rabote-open-source-proektov-na-github-kratkoe-rukovodstvo-dlja-nachinajushhih/' rel='external nofollow ugc' class='url'>Как принять участие в работе Open Source проектов на GitHub. Краткое руководство для начинающих</a> 			</div>
+		</li><!-- #comment-## -->
+		<li id="comment-93797" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-93797" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/850bde2c32ab4b99c9826ed20b0a2641?s=74&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/850bde2c32ab4b99c9826ed20b0a2641?s=148&#038;d=mm&#038;r=g 2x' class='avatar avatar-74 photo' height='74' width='74' loading='lazy' decoding='async'/>						<b class="fn">Julian Torres</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/#comment-93797"><time datetime="2022-02-08T01:10:43+00:00">8 February 2022 at 1:10 am</time></a>					</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thank you for providing this clear and thoughtful guide!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/?replytocom=93797#respond' data-commentid="93797" data-postid="3901" data-belowelement="div-comment-93797" data-respondelement="respond" data-replyto="Reply to Julian Torres" aria-label='Reply to Julian Torres'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-99141" class="pingback even thread-even depth-1">
+			<div class="comment-body">
+				Pingback: <a href='https://bugsfixing.com/solved-github-after-git-clone-how-to-make-a-pull-request/' rel='external nofollow ugc' class='url'>[SOLVED] Github &#8211; After git clone, how to make a pull request? &#8211; BugsFixing</a> 			</div>
+		</li><!-- #comment-## -->
+		<li id="comment-99148" class="pingback odd alt thread-odd thread-alt depth-1">
+			<div class="comment-body">
+				Pingback: <a href='https://errorsfixing.com/github-after-git-clone-how-to-make-a-pull-request/' rel='external nofollow ugc' class='url'>Github - After git clone, how to make a pull request? - ErrorsFixing</a> 			</div>
+		</li><!-- #comment-## -->
+		<li id="comment-102771" class="pingback even thread-even depth-1">
+			<div class="comment-body">
+				Pingback: <a href='https://bugs.fixeme.com/fixed-github-after-git-clone-how-to-make-a-pull-request/' rel='external nofollow ugc' class='url'>[FIXED] Github - After git clone, how to make a pull request? - FixeMe</a> 			</div>
+		</li><!-- #comment-## -->
+        </ol><!-- .comment-list -->
+
+        
+        
+    
+    	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Thoughts? Leave a reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/the-beginners-guide-to-contributing-to-a-github-project/#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://akrabat.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate><p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p><p class="comment-form-comment"><label for="comment">Comment <span class="required">*</span></label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" autocomplete="url" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='3901' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="4c4b076384" /></p><p style="display: none !important;"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="243"/><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>	</div><!-- #respond -->
+	
+</div><!-- #comments -->
+                    <nav class="navigation post-navigation row" role="navigation">
+        <h1 class="screen-reader-text">Post navigation</h1>
+        <div class="nav-links">
+            <div class="col-sm-6">
+            <a href="https://akrabat.com/on-blocking-ads/" rel="prev"><span class="meta-nav">&larr;</span> On blocking ads</a>            </div>
+            <div class="col-sm-6 text-right">
+            <a href="https://akrabat.com/the-beginners-guide-to-rebasing-your-pr/" rel="next">The beginner's guide to rebasing your PR <span class="meta-nav">&rarr;</span></a>            </div>
+
+        </div><!-- .nav-links -->
+    </nav><!-- .navigation -->
+                            
+
+          <nav>
+            <ul class="pager">
+              <li></li>
+              <li></li>
+            </ul>
+          </nav>
+
+        </div>
+
+    
+        <div class="col-sm-3 sidebar">
+            <div class="widget_text sidebar-module"><div class="textwidget custom-html-widget"><p style="text-align: center"><a href="http://itunes.apple.com/app/daily-jotter/id411293034?mt=12" title="">
+ <img src="/wp-content/uploads/dj-banner2-150.jpg" border="0" width="150" height="96" alt="Daily Jotter on Mac App Store"/></a></p></div></div><div class="widget_text sidebar-module"><div class="textwidget custom-html-widget"><p style="text-align: center"><a href="https://19ft.com" title="Go to Nineteen Feet's website">
+ <img src="/wp-content/uploads/nineteenfeet-2000.jpg" border="0" width="150" height="30" alt="Nineteen Feet logo"/></a></p>
+</div></div>            <div class="widget_text sidebar-module sidebar-module-inset"><div class="textwidget custom-html-widget"><div class="h-card">
+<p class="p-note"><a class="p-name u-url" rel="me" href="https://akrabat.com">Rob Allen</a> is a sofware consultant and developer concentrating on HTTP APIs. He develops in PHP, Python and other interesting languages, contributing to <a href="https://rst2pdf.org">rst2pdf</a>, <a href="https://www.slimframework.com">Slim Framework</a>, <a href="https://openwhisk.apache.org">Apache OpenWhisk</a> amongst other OSS projects.
+Based in Worcester, UK, he runs <a href="http://19ft.com/">Nineteen Feet</a> and is the author of <a href="http://www.zendframeworkinaction.com">Zend Framework in Action</a>.</p>
+	<div style="display:none;">
+	<img class="u-photo" src="https://akrabat.com/stuff/rob_allen.jpg" alt="profile image" />		
+	</div>
+</div>
+
+<p>Around the web:<br/>
+<!-- <a href="https://framingfocus.net">Framing Focus blog</a><br/> -->
+Mastodon: <a rel="me" href="https://phpc.social/@akrabat">@akrabat@phpc.social</a>
+Twitter: <a rel="me" href="https://twitter.com/akrabat">@akrabat</a><br/>
+Instagram: <a rel="me" href="https://www.instagram.com/akrabatic">akrabatic</a><br/>
+Flickr: <a href="https://www.flickr.com/photos/akrabat">photos</a><br/>
+GitHub: <a rel="me" href="https://github.com/akrabat">Rob Allen</a><br/>
+</p>
+</div></div>            <div class="sidebar-module"><h4>Search</h4><form role="search" method="get" id="searchform" class="searchform form-inline" action="/">
+<div class="input-group">
+    <input type="text" value="" name="s" id="s" class="form-control" placeholder="Search">
+        <span class="input-group-btn">
+        <button class="btn btn-default" type="submit">
+            <span class="glyphicon glyphicon-search"></span>
+        </button>
+    </span>
+</div>
+</form>
+</div><div class="sidebar-module"><h4>Other pages</h4></div><div class="widget_text sidebar-module"><h4>Books I've written</h4><div class="textwidget custom-html-widget"><div style="text-align: left"><a href="http://amzn.to/2wLBrQg" title="Buy Zend Framework in Action from Amazon">
+ <img src="/wp-content/uploads/allen_cover150.jpg" border="0" width="150" height="188" alt="Zend Framework in Action cover"/></a></div>
+
+<div style="text-align: left"><a href="http://amzn.to/2vCrkbp" title="Buy C++Builder Developer's Guide on Amazon">
+ <img src="/wp-content/uploads/C++Builder5DevGuide-150.jpg" border="0" width="150" height="183" alt="C++Builder 5 Developer's Guide cover"/></a></div>
+</div></div>        </div>
+
+	<script type="text/javascript">
+	var shutterSettings = {"imgDir":"https:\/\/akrabat.com\/wp-content\/plugins\/shutter-reloaded-plus\/\/menu\/","imageCount":true,"FS":false,"textBtns":false,"oneSet":true,"showfblike":false};
+	</script>
+	<script src="https://akrabat.com/wp-content/plugins/shutter-reloaded-plus//shutter-reloaded.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	try{shutterReloaded.init('sh');}catch(e){}	</script>
+	      </div><!-- /.row -->
+
+    <footer class="blog-footer row">
+        
+        <div class="col-sm-6">
+        <ul id="footer-menu" class="blog-nav list-inline">
+            <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                <a href="/disclosure-policy/">Disclosure policy</a>
+            </li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                <a href="/license-for-code-published-on-this-site/">License for code on this site</a>
+            </li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                <a href="feed://akrabat.com/feed/">Entries RSS</a>
+            </li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom meta">
+                            </li>
+        </ul>
+        </div>
+        <div class="col-sm-6">
+            <p class="copyright">Copyright &copy; 2005-2022 Rob Allen. All rights reserved.</p>
+        </div>
+    </footer>
+
+    </div><!-- /.container -->
+    <script type='text/javascript' src='https://akrabat.com/wp-content/themes/akrabat3/vendor/js/bootstrap.min.js?ver=3.3.7' id='bootstrap-js'></script>
+<script type='text/javascript' src='https://akrabat.com/wp-content/themes/akrabat3/script.js?ver=1.0.0' id='akrabat3-script-js'></script>
+<script defer type='text/javascript' src='https://akrabat.com/wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1664384104' id='akismet-frontend-js'></script>
+  </body>
+</html>
+<!-- single.php -->
+
+<!-- Dynamic page generated in 0.141 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2022-11-15 08:45:25 -->
+
+<!-- Compression = gzip -->

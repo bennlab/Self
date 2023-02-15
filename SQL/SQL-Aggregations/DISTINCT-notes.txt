@@ -1,0 +1,10 @@
+DISTINCT is always used in SELECT statements, and it provides the unique rows for all columns written in the SELECT statement.
+ Therefore, you only use DISTINCT once in any particular SELECT statement.
+
+You could write:
+
+SELECT DISTINCT column1, column2, column3
+FROM table1;
+
+DISTINCT - Expert Tip
+It’s worth noting that using DISTINCT, particularly in aggregations, can slow your queries down quite a bit.

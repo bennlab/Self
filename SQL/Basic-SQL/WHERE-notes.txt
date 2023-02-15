@@ -1,0 +1,2 @@
+WHERE subsets the returned data based on logical condition
+WHERE appears after the FROM, JOIN and ON clauses, but before GROUP BY.

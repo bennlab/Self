@@ -1,0 +1,18 @@
+Whenever we need to use existing tables to create a new table that we then want to query again, 
+this is an indication that we will need to use some sort of subquery. 
+The original Query goes in the FROM statement
+You must use an alias for the table you nest within the outer query.
+
+Subqueries Part II
+In the first subquery you wrote, you created a table that you could then query again in the FROM statement. 
+However, if you are only returning a single value, you might use that value in a logical statement like WHERE, HAVING, or even SELECT - the value could be nested within a CASE statement.
+
+On the next concept, we will work through this example, and then you will get some practice on answering some questions on your own.
+
+Expert Tip
+Note that you should not include an alias when you write a subquery in a conditional statement. 
+This is because the subquery is treated as an individual value (or set of values in the IN case) rather than as a table.
+
+Also, notice the query here compared a single value. If we returned an entire column IN would need to be used to perform a logical argument. 
+If we are returning an entire table, then we must use an ALIAS for the table, and perform additional logic on the entire table.
+
